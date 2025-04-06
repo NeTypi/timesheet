@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timesheet Tracker</title>
+</head>
 <body>
 
-<h1>Timesheet</h1>
+  <input type="text" id="project" placeholder="Project">
+  <input type="number" id="hours" placeholder="Hours">
+  <button onclick="addEntry()">Add Entry</button>
 
-<script>
-function myFunction() {
-  document.getElementById("core.js").innerHTML = "Paragraph changed.";
-}
-</script>
+  <ul id="list"></ul>
 
-  
+  <script>
+    function addEntry() {
+      const project = document.getElementById('project').value;
+      const hours = document.getElementById('hours').value;
+      const li = document.createElement('li');
+      li.textContent = `${project} - ${hours} hour(s)`;
+      document.getElementById('list').appendChild(li);
+    }
+  </script>
+
 </body>
 </html>
